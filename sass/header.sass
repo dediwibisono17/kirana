@@ -1,0 +1,238 @@
+$color-orange: orange
+$color-blue: #444
+$max : 766px
+$color-primary: #11773b
+$color-yellow:#fec400
+.bg-black
+    // background: rgba(255,255 ,255 ,1 ) !important
+    transition: .3s
+    // border-bottom: 2px solid orange
+    box-shadow: 0 10px 20px rgb(0 0 0 / 20%)
+    backdrop-filter: blur(8px)
+    @media screen and (max-width:$max) 
+        backdrop-filter: initial
+        background: rgba(255,255 ,255 ,1) !important
+    &.navbar-dark 
+        .navbar-nav 
+            .nav-link
+                color: #4a4a4a
+.navbar-dark 
+    .active
+        .nav-link
+            color: $color-primary !important
+            @media screen and (max-width:$max) 
+                color: $color-primary !important
+    .navbar-nav 
+        .nav-link
+            color: #4a4a4a
+            &:hover
+                color: #4a4a4a
+            @media screen and (max-width:$max) 
+                color: #4a4a4a !important
+.navbar-dark 
+    i
+        color: black
+.navbar-collapse 
+    @media screen and ( max-width: $max )
+        background: rgba(255,255 ,255 ,.8 )!important
+        backdrop-filter: blur(8px)
+.sosmed
+    @media screen and ( max-width: $max )
+        margin-bottom: 8px
+    i
+        font-size: 28px
+        margin: 0 8px
+        color: gray
+        transition: .3s
+        @media screen and ( max-width: $max )
+            float: left
+            
+    .fa-facebook-square
+        &:hover
+            color: #4267B2
+    .fa-instagram
+        &:hover
+            color: #fb3958
+    .fa-whatsapp
+        &:hover
+            color: #25d366
+header
+    position: fixed
+    right: 0
+    left: 0
+    top: 0
+    z-index: 999
+    // overflow-x: hidden
+    // border-bottom: 2px solid rgba(0,0 ,0 ,.8 )
+    .form-control
+        background-color: transparent
+        border-bottom: 1px solid white
+        &:focus
+            background-color: transparent
+            color: white
+        
+    
+    //  ::-webkit-input-placeholder
+    //     color: #fafafa !important
+    
+    .btn-search
+        background-color: $color-orange
+        color: white
+        font-size: 14px
+        &:focus,
+        &:hover
+            color: white
+
+.bg
+    &-blur
+        position: absolute
+        width: 100%
+        height: 100%
+        z-index: -1
+        backdrop-filter: blur(5px)
+
+.navbar-collapse 
+    top: 86px
+
+
+.ismobile 
+    display: none !important
+    @media screen and ( max-width: $max )
+        display: block !important
+    
+
+
+.isdekstop 
+    display: block !important
+    @media screen and ( max-width: $max )
+        display: none !important
+
+.bg-dark 
+    background-color: transparent !important
+    @media screen and ( max-width: $max )
+        // background-color: $color-blue
+        background: transparent
+
+.bg-scroll 
+    // background: $color-blue
+    background: rgba(white,.4)
+    transition: .5s
+    
+
+    
+.disable-flag 
+    filter: grayscale(100%)
+
+
+.flag 
+    width: 30px
+    height: 30px
+    display: inline-block
+    margin: 0 8px
+    border-radius: 50%
+    box-shadow: 0 3px 6px #bbb
+    img 
+        width: 100%
+        border-radius: 50%
+        height: 100%
+        object-fit: cover
+    
+.test 
+    background: white
+    position: absolute
+    top: 50px
+    z-index: 999
+    bottom: 0
+
+
+@media (max-width: 776px)
+    .navbar-nav 
+        margin-bottom: 16px
+    .navbar-collapse
+        position: fixed
+        z-index: 9999
+        top: 50px
+        left: 0
+        padding-left: 15px
+        padding-right: 15px
+        padding-bottom: 15px
+        width: 100%
+        height: 100%
+        top: 73px
+    
+    .navbar-collapse.collapsing
+        left: -100%
+        transition: height 0s ease
+    
+    .navbar-collapse.show
+        left: 0
+        transition: left 300ms ease-in-out
+    
+    .navbar-toggler.collapsed~.navbar-collapse
+        transition: left 500ms ease-in-out
+    
+.logo 
+    width: 100px
+    height: auto
+    margin-right: 16px
+    @media screen and ( max-width:  $max)
+        display: none
+
+.pointer
+    &.search
+        i
+            color: #4a4a4a !important
+            cursor: pointer
+            transition: .3s
+            &:hover 
+                color: black !important
+
+.search-wrap
+    position: fixed
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    z-index: 9999
+    background: rgba(255, 255,255 ,.8)
+    backdrop-filter: blur(8px)
+    display: none
+    .size
+        position: absolute
+        z-index: 99999
+        width: 60%
+        transform: translate(-50%,-50%)
+        top: 50%
+        left: 50%
+        @media screen and (max-width:$max)
+            width: 90%
+        .form-control-search
+            padding: 0 72px 0 24px
+            font-size: 40px
+            font-family: 'BebasNeue'
+            box-shadow: none
+            border: 1px solid #4a4a4a
+            @media screen and (max-width:$max)
+                font-size: 32px
+                padding: 0 60px 0 16px
+    .search-click 
+        position: absolute
+        right: 16px
+        top: 8px
+        font-size: 40px
+        cursor: pointer
+        @media screen and (max-width:$max)
+            top: 0
+    .close-click 
+        position: absolute
+        right: 48px
+        top: 16px
+        font-size: 40px
+        cursor: pointer
+        @media screen and (max-width:$max)
+            right: 16px
+
+.mobile-search
+    &.ismobile
+        position: absolute
+        right: 13%
