@@ -2190,7 +2190,8 @@ ul.breadcumb li a:hover {
     .nav-item {
         width: 45% !important;
         display: inline-block;
-        border: 1px solid #ccc;
+        // border: 1px solid #ccc;
+        box-shadow: 0 3px 6px #bbb;
         border-radius: 20px !important;
         transition: .3s;
         a {
@@ -2199,7 +2200,7 @@ ul.breadcumb li a:hover {
         &:hover,
         &:focus {
             background-color: silver;
-            border: 1px solid transparent !important;
+            // border: 1px solid transparent !important;
             border-color: transparent !important;
         }
     }
@@ -2207,6 +2208,7 @@ ul.breadcumb li a:hover {
         border-color: transparent !important;
         background-color: $color-primary !important;
         color: white !important;
+        box-shadow: 0 3px 6px $color-primary;
         border-radius: 16px !important;
     }
 }
