@@ -27,10 +27,17 @@
 }
 
 @font-face {
-    font-family: "Avenir-Bold";
+    font-family: "Ubuntu";
+    src: url('fonts/Ubuntu');
+    src: local('Ubuntu');
+    src: url('Ubuntu.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: "MavenPro-Bold";
     src: url('fonts/AvenirLTStd-Black');
     src: local('BMWMotorradW05-Regular');
-    src: url('AvenirLTStd-Black.woff2') format('woff2');
+    src: url('MavenPro-Bold.woff2') format('woff2');
 }
 
 $color-primary: #11773b;
@@ -114,13 +121,170 @@ h2 {
     text-transform: uppercase;
 }
 
+.new-usp {
+    margin: 0;
+    &__all {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        @media screen and (max-width: 766px) {
+            display: block;
+        }
+        li {
+            // display: inline-block;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border-color: transparent;
+            color: white;
+            transition: .3s;
+            // height: 235px;
+            &:nth-child(odd) {
+                .bg-color {
+                    background: rgba(113, 179, 21, 0.8);
+                }
+            }
+            &:hover {
+                .bg-color {
+                    background: rgba(72, 59, 51, .8) !important;
+                }
+            }
+        }
+    }
+    &__card {
+        padding: 32px;
+        // background: rgba(105, 175, 7, 1);
+        position: relative;
+        z-index: 10;
+        transition: .3s;
+        // height: 235px;
+        p {
+            height: 120px;
+            overflow: hidden;
+        }
+        .bg-help {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .bg-color {
+            position: absolute;
+            transition: .3s;
+            // height: 235px;
+            inset: 0;
+            z-index: 3;
+            background: rgba(137, 110, 81, 0.8);
+        }
+    }
+}
+
+.new-about {
+    &__desc {
+        margin-bottom: 16px;
+        p {
+            margin-bottom: 8px;
+        }
+    }
+    &__list {
+        display: block;
+        list-style-type: decimal;
+        li {
+            display: inline-block;
+            width: 45%;
+            // border-bottom: 1.5px solid $color-primary;
+            margin: 0 8px 8px 0;
+            @media screen and (max-width: 766px) {
+                width: auto;
+            }
+            // &:last-child,
+            // &:nth-child(3) {
+            //     border-bottom: 1.5px solid transparent;
+            // }
+        }
+    }
+    .line {
+        height: 1.2px;
+        width: 100%;
+        background: rgb(153, 149, 149);
+        margin: 16px 0;
+    }
+    .gallery {
+        display: flex;
+        padding: 2px;
+        transition: .3s;
+        figure {
+            margin-bottom: 0;
+        }
+        &:hover {
+            .gallery__image {
+                filter: grayscale(1);
+            }
+        }
+        &__column {
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+        }
+        &__link {
+            margin: 2px;
+            overflow: hidden;
+            &:hover {
+                .gallery__image {
+                    filter: grayscale(0);
+                }
+                .gallery__caption {
+                    opacity: 1;
+                }
+            }
+        }
+        &__thumb {
+            position: relative;
+            &--odd {
+                height: 280px;
+            }
+            &--even {
+                height: 200px;
+            }
+            img {
+                height: 100%;
+            }
+        }
+        &__image {
+            display: block;
+            width: 100%;
+            transition: .3s;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+        &__caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 25px 15px 15px;
+            width: 100%;
+            // font-family: 'Raleway', sans-serif;
+            font-size: 16px;
+            color: white;
+            opacity: 0;
+            background: linear-gradient(0deg, rgba(0, 0, 0, .5) 0%, rgba(255, 255, 255, 0) 100%);
+            transition: .3s;
+        }
+    }
+}
+
 .font {
     &-200 {
         font-weight: normal !important;
     }
     &-bold {
         // font-weight: bold;
-        font-family: 'Avenir-Bold', sans-serif;
+        font-family: 'MavenPro-Bold', sans-serif;
     }
     &-title {
         font-family: 'BebasNeue', sans-serif;
@@ -139,6 +303,9 @@ h2 {
     &-medium,
     &-std {
         font-size: 14px !important;
+    }
+    &-16 {
+        font-size: 16px;
     }
     &-medium-high {
         font-size: 20px !important;
@@ -194,6 +361,10 @@ h5 {
     }
 }
 
+h1 {
+    font-family: 'Ubuntu';
+}
+
 .back {
     &:hover,
     &:focus {
@@ -208,6 +379,7 @@ main {
     background: white;
     @media screen and (max-width: $max) {
         margin-bottom: 500px;
+        overflow: hidden;
     }
 }
 
@@ -218,7 +390,7 @@ main {
 body,
 main,
 html {
-    font-family: 'OpenSans', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     color: #1f1f1f;
     box-sizing: border-box;
 }
@@ -261,7 +433,7 @@ html {
             border: 1px solid transparent !important;
             box-shadow: none !important;
             outline: 0 !important;
-            color: $color-primary !important;
+            color: white !important;
         }
     }
     &-secondary {
@@ -1038,7 +1210,7 @@ footer {
     a {
         color: black;
         float: left;
-        font-family: 'Avenir-Bold', sans-serif;
+        font-family: 'MavenPro-Bold', sans-serif;
         padding: 4px 8px;
         font-size: 12px;
         background: white;
@@ -1318,7 +1490,8 @@ footer {
             display: inline-block;
             width: 75%;
             .upper {
-                transition: .5s;
+                transition: .3s;
+                // height: 235px;
                 // color: #4285F4;
                 // color: $color-yellow;
             }
@@ -1620,7 +1793,7 @@ ul.breadcumb {
     }
     .active-state {
         color: $color-primary;
-        font-family: 'Avenir-Bold';
+        font-family: 'MavenPro-Bold';
     }
 }
 
@@ -1972,6 +2145,60 @@ ul.breadcumb li a:hover {
 }
 
 .article {
+    &__top {
+        position: relative;
+        // z-index: 4;
+        .titles {
+            position: relative;
+            z-index: 9;
+            background-color: white;
+            width: 450px;
+            @media screen and (max-width: 766px) {
+                width: auto;
+            }
+        }
+        .help-line {
+            @media screen and (max-width: 766px) {
+                display: none;
+            }
+            position: absolute;
+            right: 0;
+            z-index: 2;
+            left: 0;
+            bottom: 24px;
+            height: 2px;
+            background: rgba($color: #000000,
+            $alpha: .3);
+        }
+    }
+    &__new {
+        .content {
+            display: block;
+            margin: 0 0 16px !important;
+            @media screen and (max-width: 766px) {
+                padding: 0 !important;
+            }
+            &__image {
+                display: inline-block;
+                width: 35%;
+                height: 125px;
+                vertical-align: top;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            &__all {
+                display: inline-block;
+                width: 55%;
+                margin: 0 8px!important;
+            }
+            &__title {
+                margin: 0 !important;
+            }
+        }
+    }
     .center {
         text-align: center;
         margin-top: 24px;
@@ -2006,8 +2233,23 @@ ul.breadcumb li a:hover {
             text-decoration: none !important;
         }
     }
+    .highlights-new {
+        height: 408px;
+        @media screen and (max-width: 766px) {
+            margin-bottom: 16px;
+        }
+        &__img {
+            width: 100%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
     .highlights {
-        height: 450px;
+        // height: 200px;
         width: auto;
         position: relative;
         z-index: 2;

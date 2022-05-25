@@ -143,8 +143,14 @@ img {
     margin: 0 auto;
     padding: 0.75rem 0;
     z-index: 100;
-    background: var(--color-white);
+    background: transparent;
     box-shadow: var(--shadow-medium);
+    .help-bg {
+        position: absolute;
+        inset: 0;
+        background: rgba($color: white, $alpha: .5);
+        backdrop-filter: blur(8px);
+    }
     ul {
         margin-bottom: 0;
     }
@@ -153,6 +159,8 @@ img {
         flex-direction: row;
         padding: 0;
         flex-wrap: wrap;
+        position: relative;
+        z-index: 6;
         align-items: center;
         justify-content: space-between;
     }
@@ -183,6 +191,12 @@ img {
         display: inline-block;
         line-height: 3.125rem;
         margin-left: 1.5rem;
+        &.active {
+            >a {
+                color: #11773b !important;
+                font-weight: bold;
+            }
+        }
         >a {
             position: relative;
             font-family: inherit;
@@ -192,6 +206,7 @@ img {
             border: none;
             outline: none;
             color: var(--color-black);
+            // font-weight: bold;
             text-transform: capitalize;
             transition: color 0.3s ease;
         }
