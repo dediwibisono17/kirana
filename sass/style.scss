@@ -2175,6 +2175,10 @@ ul.breadcumb li a:hover {
         .content {
             display: block;
             margin: 0 0 16px !important;
+            transition: .3s;
+            &:hover {
+                background: rgba($color: $color-primary, $alpha: .1);
+            }
             @media screen and (max-width: 766px) {
                 padding: 0 !important;
             }
@@ -2198,7 +2202,7 @@ ul.breadcumb li a:hover {
                 margin: 0 8px!important;
             }
             &__title {
-                margin: 0 !important;
+                // margin: 0 !important;
             }
         }
     }
