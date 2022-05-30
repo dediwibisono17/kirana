@@ -126,3 +126,18 @@ window.onresize = function() {
         }
     }
 };
+
+
+$(".hide-usp").click(()=>{
+    $(".usp").toggle();
+})
+
+$(".hide-new-usp").click(()=>{
+    $(".new-usp").toggle();
+})
+$(".hide-about").click(()=>{
+    $(".new-about-1").toggle();
+})
+$(".hide-new-about").click(()=>{
+    $(".new-about-2").toggle();
+})
