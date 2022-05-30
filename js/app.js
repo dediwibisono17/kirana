@@ -141,3 +141,9 @@ $(".hide-about").click(()=>{
 $(".hide-new-about").click(()=>{
     $(".new-about-2").toggle();
 })
+$(".hide-at-1").click(()=>{
+    $(".at-1").toggle();
+})
+$(".hide-at-2").click(()=>{
+    $(".at-2").toggle();
+})
