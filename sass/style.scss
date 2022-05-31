@@ -569,7 +569,7 @@ section {
         .highlights {
             position: relative;
             &__img {
-                height: 640px;
+                height: 520px;
                 width: 100%;
                 position: relative;
                 z-index: 2;
@@ -582,7 +582,7 @@ section {
                     right: 0;
                     top: 0;
                     bottom: 0;
-                    background: linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, 1));
+                    background: linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, .7));
                     z-index: 5;
                 }
                 img {
@@ -1128,6 +1128,22 @@ footer {
         position: relative;
         height: 375px;
         z-index: 1;
+        margin-top: 48px;
+        .help-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, .6));
+        }
+        .image {
+            width: 100%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
     }
     &-title {
         position: absolute;
@@ -1140,28 +1156,6 @@ footer {
         @media screen and (max-width: $max) {
             left: 50px;
             font-size: 40px;
-        }
-    }
-    .wrap {
-        display: block;
-        margin: 0 auto;
-        text-align: center;
-        &__foto {
-            display: inline-block;
-            width: 24%;
-            cursor: pointer;
-            margin-bottom: 4px;
-            .image {
-                height: 240px;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-            }
-            @media screen and(max-width: $max) {
-                width: 48%;
-            }
         }
     }
 }
@@ -2542,3 +2536,78 @@ ul.breadcumb li a:hover {
 
 //mega menu
 //end mega menu
+.bg-indonesia {
+    position: absolute;
+    right: 8px;
+    bottom: -8px;
+    opacity: .6;
+}
+
+.description {
+    z-index: 10;
+}
+
+.pdf {
+    // background: rgba($color: #000000, $alpha: .05);
+    a {
+        h3 {
+            color: #000000 !important;
+        }
+        &:hover {
+            text-decoration: none !important;
+            h3 {
+                color: $color-primary !important;
+            }
+        }
+    }
+    &__card {
+        padding: 8px;
+        background: white;
+        box-shadow: 0 3px 6px #bbb;
+        margin-bottom: 24px;
+        &:hover {
+            background: rgba($color: $color-primary, $alpha: .1);
+            // box-shadow: 0 3px 6px #999;
+        }
+        .image {
+            width: 70%;
+            height: 70%;
+            margin: 0 auto;
+            text-align: center;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+.bg-leaf {
+    position: absolute;
+    left: -24px;
+    top: 24px;
+}
+
+//custom bootstrap
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    background-color: $color-primary !important;
+}
+
+.nav-item {
+    border-radius: 8px;
+    margin: 0 4px;
+    background: rgba(black, .2);
+    a {
+        border-radius: 8px !important;
+        color: #000;
+        &:hover {
+            color: $color-primary;
+        }
+    }
+    &:hover {
+        background: rgba($color: $color-primary, $alpha: .2);
+        border-radius: 8px;
+    }
+}
