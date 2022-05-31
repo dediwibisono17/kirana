@@ -89,6 +89,7 @@ $max:767px;
 
 h2 {
     font-family: 'GreatVibes', sans-serif;
+    font-size: 36px;
 }
 
 .bg {
@@ -1128,7 +1129,7 @@ footer {
         position: relative;
         height: 375px;
         z-index: 1;
-        margin-top: 48px;
+        margin-top: 72px;
         .help-bg {
             position: absolute;
             inset: 0;
@@ -2610,4 +2611,13 @@ ul.breadcumb li a:hover {
         background: rgba($color: $color-primary, $alpha: .2);
         border-radius: 8px;
     }
+}
+
+.banners,
+.pdf {
+    padding: 0;
+}
+
+.wrap-content {
+    margin-bottom: 24px;
 }
